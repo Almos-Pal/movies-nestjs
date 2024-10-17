@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <form method="post" class="form-group d-flex align-items-center flex-column ">
+            <div class="w-100">
+                <label for="name">Name:</label>
+
+                <input type="text" name="name" id="name" class="form-control" value=<%=reservation.name%> >
+            </div>
+            <div class="w-100">
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" class="form-control" value=<%=reservation.email%>>
+            </div>
+            <div class="w-100">
+                <label for="date">Reservation date:</label>
+                <input type="datetime-local" name="date" id="date" class="form-control" value=<%=reservation.date%>>
+
+            </div>
+            <div class="w-100">
+                <label for="seats">Seats:</label>
+                <input type="number" name="seats" id="seats" min="1" max="10" class="form-control" value=<%=reservation.seats%>>
+
+            </div>
+            <div class="w-100 mt-3">
+                <% for(error of errors){ %>
+                    <p class="w-100 alert alert-danger"><%=error%></p>
+                
+                <%}%>
+            </div>
+    
+        <input type="submit" value="Reserve" class="btn btn-primary w-50 mt-5">
+    </form>
+</div>
+</body>
+</html>
